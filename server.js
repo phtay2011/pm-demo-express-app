@@ -13,7 +13,7 @@ app.get("/", function (req, res) {
     { name: "Jess", department: "Product Manager", interest: "Running" },
     { name: "Kendra", department: "Product Operations", interest: "Drinking" },
   ];
-  const tagline = "These are my top 3 friends in OGP! ";
+  const tagline = "These are my top 3 friends in OGP!!! ";
 
   res.render("pages/index", {
     friends: friends,

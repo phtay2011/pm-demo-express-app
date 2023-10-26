@@ -8,11 +8,12 @@ export const options = {
 
 export default () => {
   const url =
-    "http://ec2-13-229-135-220.ap-southeast-1.compute.amazonaws.com:3000/";
+    "http://ec2-13-229-135-220.ap-southeast-1.compute.amazonaws.com:3000";
   // Test 1 - ensure website is up
-  const websiteTest = http.get(url);
+  const websiteTest = http.get(url + "/");
 
   // Test 2 - ensure api can store data
+  const endpoint = "/data";
   const payload = JSON.stringify({
     name: "paul",
   });
@@ -23,6 +24,6 @@ export default () => {
     },
   };
 
-  const apiTest = http.post(url, payload, params);
+  const apiTest = http.post(url + endpoint, payload, params);
   sleep(1);
 };

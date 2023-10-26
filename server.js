@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
-
 // use res.render to load up an ejs view file
 
 // index page
@@ -42,6 +42,15 @@ app.get("/work", function (req, res) {
 // about page
 app.get("/interest", function (req, res) {
   res.render("pages/interest");
+});
+
+//POST request for testing
+// Use the express.json middleware
+app.use(express.json());
+
+app.post("/data", (req, res) => {
+  console.log(req.body); // This will log the parsed JSON body
+  res.send("Hello " + req.body.name);
 });
 
 app.listen(3000);
